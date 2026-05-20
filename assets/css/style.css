@@ -1,0 +1,104 @@
+/* --- RESET DE BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police propre par défaut */
+}
+
+/* Couleurs principales du site */
+:root {
+    --primary-red: #c8232c; /* Le rouge du bouton */
+    --text-dark: #000000;
+    --text-light: #ffffff;
+}
+
+/* --- HEADER --- */
+.main-header {
+    display: flex;
+    justify-content: space-between; /* Espace le logo, le menu et le bouton */
+    align-items: center;
+    padding: 20px 50px;
+    background-color: var(--text-light);
+}
+
+.logo-text {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* Espace entre les liens du menu */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-phone {
+    background-color: var(--primary-red);
+    color: var(--text-light);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+/* --- SECTION HERO --- */
+.hero {
+    /* Le linear-gradient crée le filtre noir transparent par-dessus l'image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../../images/bg-toiture.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh; /* Prend 80% de la hauteur de l'écran */
+    display: flex;
+    align-items: center; /* Centre le contenu verticalement */
+    padding: 0 50px;
+}
+
+.hero-content {
+    max-width: 600px; /* Empêche le texte d'être trop large */
+    color: var(--text-light);
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.text-red {
+    color: var(--primary-red);
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.btn-phone-large {
+    display: inline-block;
+    background-color: var(--primary-red);
+    color: var(--text-light);
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.hero-reassurance {
+    font-size: 14px !important;
+}
+
+.check-red {
+    color: var(--primary-red);
+    font-weight: bold;
+}

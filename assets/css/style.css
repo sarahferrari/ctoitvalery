@@ -16,15 +16,22 @@
 /* --- HEADER --- */
 .main-header {
     display: flex;
-    justify-content: space-between; /* Espace le logo, le menu et le bouton */
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background-color: var(--text-light);
+    padding: 30px 50px;
+    max-width: 1500px; /* On élargit la zone pour s'aligner avec le reste */
+    margin: 0 auto;
+}
+.logo-img {
+    height: 70px; /* Tu pourras augmenter ou baisser ce chiffre selon la forme de ton logo */
+    width: auto;
+    object-fit: contain; /* Assure que le logo ne soit jamais déformé */
 }
 
 .logo-text {
-    font-size: 24px;
+    font-size: 26px; /* J'ai légèrement grossi le texte puisqu'il n'y a plus d'image */
     text-transform: uppercase;
+    letter-spacing: 1px; /* Espacement élégant entre les lettres */
 }
 
 .main-nav ul {
@@ -50,16 +57,7 @@
 }
 
 /* --- SECTION HERO --- */
-.hero {
-    /* Le linear-gradient crée le filtre noir transparent par-dessus l'image */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../../images/bg-toiture.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 80vh; /* Prend 80% de la hauteur de l'écran */
-    display: flex;
-    align-items: center; /* Centre le contenu verticalement */
-    padding: 0 50px;
-}
+
 
 .hero-content {
     max-width: 600px; /* Empêche le texte d'être trop large */
@@ -70,6 +68,26 @@
     font-size: 55px;
     line-height: 1.2;
     margin-bottom: 20px;
+}.hero {
+     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../images/toiture-accueil.jpeg');
+     background-size: cover;
+     background-position: center;
+     height: 80vh;
+     display: flex;
+     align-items: center;
+     padding: 0 50px; /* Maintient l'espace avec le bord de l'écran */
+ }
+
+.hero-content {
+    max-width: 1400px; /* La même largeur que le reste du site */
+    width: 100%;
+    margin: 0 auto;
+    color: var(--text-light);
+}
+
+.hero-content h1,
+.hero-content p {
+    max-width: 600px; /* Empêche le texte de traverser tout l'écran de gauche à droite */
 }
 
 .text-red {
@@ -101,4 +119,320 @@
 .check-red {
     color: var(--primary-red);
     font-weight: bold;
+}
+
+
+/* --- SECTION POURQUOI NOUS --- */
+
+/* Ajoute de l'espace en haut et en bas de la section */
+.section-padding {
+    padding: 80px 50px;
+    background-color: var(--text-light); /* Fond blanc */
+}
+
+/* Le conteneur qui coupe l'écran en deux */
+.container-split {
+    display: flex;
+    gap: 60px; /* L'espace entre le texte et l'image */
+    max-width: 1200px; /* Largeur max pour que ça ne s'étire pas à l'infini sur grand écran */
+    margin: 0 auto; /* Centre le bloc sur la page */
+    align-items: center; /* Aligne verticalement au centre */
+}
+
+/* Les deux colonnes prennent chacune 50% de la place (flex: 1) */
+.content-left, .content-right {
+    flex: 1;
+}
+
+/* Mise en forme du texte de gauche */
+.content-left h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.content-left p {
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+/* Liste des points forts avec les icônes */
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espace entre chaque point */
+}
+
+.feature-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Les ronds rouges des icônes */
+.feature-icon {
+    background-color: var(--primary-red);
+    color: var(--text-light);
+    min-width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Crée un rond parfait */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.feature-text p {
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+/* Mise en forme de l'image de droite */
+.img-fluid {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Permet à l'image de bien remplir son cadre sans être déformée */
+}
+
+/* --- SECTION PRESTATIONS --- */
+
+/* Conteneur global centré (qu'on réutilisera) */
+.container {
+    max-width: 1400px; /* On élargit pour pousser le contenu vers la gauche */
+    margin: 0 auto;
+}
+
+.container-split {
+    display: flex;
+    gap: 60px;
+    max-width: 1400px; /* Pareil ici */
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* En-tête de la section */
+.section-header {
+    margin-bottom: 50px;
+}
+
+.subtitle {
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.section-header h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    font-size: 18px;
+    color: #333;
+    max-width: 800px; /* Évite que le texte ne prenne toute la largeur */
+}
+
+/* --- LA GRILLE --- */
+.prestations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de taille égale */
+    border-top: 1px solid #e5e5e5; /* Ligne grise au-dessus de la grille */
+}
+
+.prestation-card {
+    padding: 40px 30px;
+    border-right: 1px solid #e5e5e5; /* Ligne droite */
+    border-bottom: 1px solid #e5e5e5; /* Ligne en bas */
+    position: relative; /* Indispensable pour placer le gros numéro */
+}
+
+/* Astuce Pro : On enlève la ligne de droite pour la dernière carte de chaque ligne */
+.prestation-card:nth-child(3n) {
+    border-right: none;
+}
+
+/* Le gros numéro en arrière-plan */
+.bg-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 80px;
+    font-weight: 900;
+    color: #f2f2f2; /* Un gris très très clair */
+    line-height: 1;
+    z-index: 0; /* Le place au fond */
+}
+
+/* Le contenu au-dessus du numéro */
+.card-content {
+    position: relative;
+    z-index: 1; /* Le place au premier plan */
+}
+
+.card-content h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.card-content p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    min-height: 50px; /* Assure que toutes les cartes ont à peu près la même hauteur de texte */
+}
+
+/* Les petits tags / étiquettes */
+.tags {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux tags de passer à la ligne si besoin */
+    gap: 8px;
+}
+
+.tags span {
+    background-color: #f7f7f7;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+    border-radius: 4px;
+}
+
+
+/* --- SECTION RÉALISATIONS --- */
+
+.gallery-grid {
+    display: grid;
+    /* On crée 4 colonnes de taille identique */
+    grid-template-columns: repeat(4, 1fr);
+    /* On fixe la hauteur de base d'une petite ligne d'image à 250px */
+    grid-auto-rows: 250px;
+    /* L'espace blanc entre les photos */
+    gap: 15px;
+}
+
+/* Style de base pour toutes les images de la galerie */
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover est MAGIQUE : il rogne l'image pour qu'elle remplisse sa case sans jamais l'aplatir ou la déformer */
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Prépare une animation douce */
+}
+
+/* Effet pro : Un léger zoom quand la souris passe sur la photo */
+.gallery-img:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+/* La classe spéciale pour la grande image de gauche */
+.item-large {
+    /* Elle s'étale sur 2 colonnes */
+    grid-column: span 2;
+    /* Elle s'étale sur 2 lignes (donc 250px + 250px + le gap) */
+    grid-row: span 2;
+}
+
+
+/* --- SECTION ZONE D'INTERVENTION --- */
+
+/* On modifie la liste classique (ul) pour la personnaliser */
+.zone-list {
+    list-style: none; /* Retire les puces noires par défaut */
+    padding-left: 0;
+    margin-top: 25px;
+}
+
+.zone-list li {
+    font-size: 16px;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 25px; /* Laisse de la place à gauche pour notre puce rouge */
+}
+
+/* On crée nos propres puces rouges avec le pseudo-élément ::before */
+.zone-list li::before {
+    content: "•";
+    color: var(--primary-red);
+    font-size: 24px;
+    position: absolute; /* Place le point par rapport à la phrase */
+    left: 0;
+    top: -4px;
+}
+
+/* Le conteneur de la carte Google Maps */
+.map-box {
+    width: 100%;
+    min-height: 350px;
+    /* On recrée le cadre en pointillés de ta maquette pour l'esthétique */
+    border: 2px dashed #bbbbbb;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+.map-box iframe {
+    display: block;
+    width: 100%;
+    min-height: 330px; /* Laisse la carte remplir l'espace à l'intérieur du padding */
+}
+
+/* --- BANDEAU APPEL A L'ACTION (CTA) --- */
+
+.cta-banner {
+    /* Fond sombre transparent avec l'image de tuiles derrière */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../images/bg-tuiles.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center; /* Centre tout le texte et les boutons */
+    color: var(--text-light);
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto; /* Centre la boîte au milieu de l'écran */
+}
+
+.cta-content h2 {
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+
+/* --- PIED DE PAGE (FOOTER) --- */
+
+#footer-placeholder {
+    background-color: var(--text-light);
+    border-top: 1px solid #eaeaea; /* Petite ligne grise discrète pour séparer */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Espace le logo à gauche et le menu à droite */
+    align-items: center;
+    padding: 40px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px; /* Grand espace entre les liens du bas */
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Effet au survol des liens du footer */
+.footer-nav a:hover {
+    color: var(--primary-red);
 }
